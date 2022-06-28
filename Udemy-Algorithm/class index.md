@@ -1,6 +1,7 @@
 강의 개요 
 
 - basement 
+0. Big O notation 
 1. Problem Solving Approach
 2. Recursion
 3. Searching Algorithms
