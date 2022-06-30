@@ -18,3 +18,12 @@ addUpTo(100000000);
 var t2 = performance.now();
 console.log(`time elapesd: ${(t2-t1 / 1000)} seconds.`)
 
+
+
+function printAllpairs(n){
+    for(var i = 0 ; i < n ; i++){
+        for(var j = 0; j < n; j++){
+            console.log(i,j);
+        }
+    }
+}
