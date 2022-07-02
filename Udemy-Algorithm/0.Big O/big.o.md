@@ -63,7 +63,7 @@ function printAllpairs(n){
 
 
 ### 빅오에 따른 시간변화
-![빅오의 표현도](../../img/screenshot 2022-06-30 오전 1.40.48.png){width="300" height="300"}
+![빅오의 표현도](../../img/shot2.png)
 
 ---
 
