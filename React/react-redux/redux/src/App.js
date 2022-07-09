@@ -13,7 +13,7 @@ export default function App(){
   }
 
   const handleMinus = () => {
-    dispatch(actionMinus());
+    dispatch(actionMinus()); //dispatch 에는 객체가 들어간다. 
   }
 
 
