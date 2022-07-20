@@ -59,14 +59,12 @@ export const Modal = () => {
           {isOpen ? "Open Modal" : "Open!"}
           {/* TODO : 조건부 렌더링을 활용해서 Modal이 열린 상태(isOpen이 true인 상태)일 때는 ModalBtn의 내부 텍스트가 'Opened!' 로 Modal이 닫힌 상태(isOpen이 false인 상태)일 때는 ModalBtn 의 내부 텍스트가 'Open Modal'이 되도록 구현해야 합니다. */}
         </ModalBtn>
-        {isOpen ? <ModalBackdrop onClick = {openModalHandler}>
+        {isOpen 
+          ? <ModalBackdrop onClick = {openModalHandler}>
                     <ModalView > 
                       아주 중요한 모달이 열렀습니다 ! 
                     </ModalView>
           </ModalBackdrop> : null}
-        
-      
-      
       
         {/* TODO : 조건부 렌더링을 활용해서 Modal이 열린 상태(isOpen이 true인 상태)일 때만 모달창과 배경이 뜰 수 있게 구현해야 합니다. */}
       </ModalContainer>
