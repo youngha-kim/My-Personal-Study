@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Intro from './pages/Intro';
 import CollectInformation from './pages/CollectInformation'
 import SelectGame from './pages/SelectGame';
+import ChartContainer from './Chart /ChartContainer';
 
 
 export const CssContainer = styled.div`
@@ -37,9 +38,10 @@ const App = () => {
         <CssContainer>
           <div className='sub'></div>
             <Board BoardArr={BoardArr}/>
-        </CssContainer>    
-        </div>
+        </CssContainer>
 
+        </div>
+        <ChartContainer></ChartContainer>
       </div>
       </BrowserRouter>
     </>

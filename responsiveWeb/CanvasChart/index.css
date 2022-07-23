@@ -1,0 +1,7 @@
+body {
+    height: 600px;
+  }
+  
+  canvas {
+    max-height: 100%;
+  }

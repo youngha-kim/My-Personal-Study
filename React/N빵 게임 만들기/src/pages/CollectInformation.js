@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { useState } from "react";
 import ModalBackdrop from "./ModalBackDrop";
-import { eventWrapper } from "@testing-library/user-event/dist/utils";
 
 export const SectionStyle = styled.section`
     display: block;
@@ -46,37 +45,47 @@ const Intro = () => {
     const [popCount, setPopCount] = useState(0);
     const [interest, setInterest] = useState(0);
    
+    const fn_onlyNum = (num) => {
+        //숫자만 들어가는 로직
+        let regExp = /^[0-9]*$/;
+        if(!regExp.test(num)){
+          return false;
+        }
+        return true;
+      }
+
     const openModalHandler = () =>{
         //모달 팝업을 엽니다
         setIsOpen(!isOpen) 
     }
 
     const totalHandler = (event) => {
-        // console.log(typeof event.target.value)
-        console.log(parseInt(event.target.value))
-        if(!parseInt(event.target.value) && event.target.value === " " ){
+        let getNumber = event.target.value;
+        if(!fn_onlyNum(getNumber)){
             alert('숫자만 입력해주세요') ;
             event.target.value = ""
-        } else{
-            setTotal(Number(event.target.value))
+        }else{
+            setTotal(Number(getNumber))
         }
         
     }
     const popCountHandler = (event) => {
         console.log(event.target.value)
-        if(!parseInt(event.target.value) ){
+        let getNumber = event.target.value;
+        if(!fn_onlyNum(getNumber)){
             alert('숫자만 입력해주세요') ;
             event.target.value = ""
-        } else{
-        setPopCount(Number(event.target.value));
+        }else{
+            setPopCount(Number(getNumber))
         }
     }
     const interestHandler = (event) => {
-        if(!parseInt(event.target.value)){
+        let getNumber = event.target.value;
+        if(!fn_onlyNum(getNumber)){
             alert('숫자만 입력해주세요') ;
             event.target.value = ""
-        } else{
-            setInterest(Number(event.target.value));
+        }else{
+            setInterest(Number(getNumber))
         }
     }
 

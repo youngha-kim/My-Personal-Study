@@ -37,7 +37,7 @@ const ModalBackdrop = ({openModalHandler, popCount, interest, total}) => {
             <ModalView > 
             <li>
                 <span> `N빵 금액은 
-                    {(total - interest) / popCount }
+                    {parseInt(total / popCount) }
                     원 씩입니다.`
                 </span>
                 </li>
