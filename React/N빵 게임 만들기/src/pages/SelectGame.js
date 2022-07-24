@@ -28,6 +28,7 @@ export const DivStyle = styled.div`
     margin-bottom: 100px;
     li{
         font-size: 35px;
+        list-style: none;
     };
     div :first-child{
         margin-top: 10vh;

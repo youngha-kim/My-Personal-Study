@@ -9,19 +9,21 @@ import SelectGame from './pages/SelectGame';
 import ChartContainer from './Chart /ChartContainer';
 
 
-export const CssContainer = styled.div`
-// TODO : Modal을 구현하는데 전체적으로 필요한 CSS를 구현합니다.
-    display: flex;
-    flex-direction: row;
-    flex-wrap : wrap;
-    border: solid black;
-    width: 100px;
-    height:100px;
-`;
+
 
 
 const App = () => {
-  let BoardArr = [0,1,2,3,4,5,6,7,8]
+  let BoardArr = []
+
+  const makeBoardArr = (arr) => {
+    for(let i = 0 ; i < 225 ; i++){
+      arr.push(i)
+    }
+    return arr 
+  }
+
+  makeBoardArr(BoardArr);
+  
 
   return (
     <>
@@ -35,13 +37,9 @@ const App = () => {
           <Route path = "/collect" element = {<CollectInformation/>}/>
           <Route path = "/selectGame" element = {<SelectGame/>}/>
         </Routes>
-        <CssContainer>
-          <div className='sub'></div>
             <Board BoardArr={BoardArr}/>
-        </CssContainer>
-
         </div>
-        <ChartContainer></ChartContainer>
+        <ChartContainer/>
       </div>
       </BrowserRouter>
     </>

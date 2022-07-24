@@ -17,7 +17,7 @@ const ResultChart = ({data}) => {
 
     //실제 차트를 그리는 곳
     const drawChart = new Chart(ctx, {
-      type: "line",
+      type: "bar",
       data: {
         labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
         datasets: [
