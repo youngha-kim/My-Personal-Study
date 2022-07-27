@@ -1,3 +1,0 @@
-(()=>{var t={942:t=>{const e={once(t){let e,r=!1;return function(...i){return r||(r=!0,e=t(...i)),e}}};t.exports=e}},e={};function r(i){var o=e[i];if(void 0!==o)return o.exports;var s=e[i]={exports:{}};return t[i](s,s.exports,r),s.exports}(()=>{const t="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis egestas feugiat elit, ac tincidunt neque vestibulum at. Mauris a eros sit amet urna efficitur tempus.",e=r(942).once(((...t)=>console.log(...t)));e(t),e(t),e(t)})()})();
-
-// dist/app.bundle.js 파일에 아래와 비슷한 이상한 코드를 보고 있으면 성공입니다. webpack은 사용자가 프론트엔드 웹 애플리케이션을 빠르게 전달받을 수 있게 코드를 최소화(minifiy)합니다. 이렇게 minify한 코드는 악의적으로 편집하기 어렵기도 합니다.
