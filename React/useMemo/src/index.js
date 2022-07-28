@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client"
 import EX1 from "./UseMemoEx1"
 import styled from 'styled-components'
+import EX2 from "./UseMemoEx2"
+import EX3 from "./UseMemoEx3"
 
 export const Exstyle = styled.div`
 .div {
@@ -14,7 +16,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Exstyle>
         <div>
-        < EX1 />
+        < EX3 />
         </div>
     </Exstyle>
 );
