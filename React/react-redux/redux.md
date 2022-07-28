@@ -32,7 +32,6 @@ Redux는, 전역 상태를 관리할 수 있는 저장소인 store을 제공한�
 	
 ## Redux Hooks  
 Redux Hooks는 React에서 Redux를 사용할 때 활용할 수 있는 Hooks 메서드를 제공
-
 	1. useSelector()
 		컴포넌트와 state를 연결하여  redux의 state에 접근할 수 있게 해주는 메서드
 	2. useDispatch()
