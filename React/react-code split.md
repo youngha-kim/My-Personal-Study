@@ -19,12 +19,29 @@
 			 
 - Import 표현식 
 	1. import(module) 표현식은 모듈을 읽고 이 모듈이 내보내는 것들을 모두 포함하는 객체를 담은 이행된 프라미스를 반환한다. 
-	2. 코드내 어디서든 동적으로 사용할 수 있다.		 
-	3.  `async` 함수 안에서 아래와 같이 사용하도 한다.
-```javascript 
-let module = await import(modulePath)
-``` 
- 
+	2. 코드내 어디서든 동적으로 사용할 수 있다.
+	```javascript
+	 let modulePath = prompt("어떤 모듈을 불러오고 싶으세요?");
+
+	 import(modulePath)
+	 .then(obj => <모듈객체>)
+	 .catch(err => <로딩에러, e.g. 해당하는 모듈이 없는 경우>)
+	``` 
+	3.  `async` 함수 안에서 "let module = await import(modulePath)" 같이 사용하도 한다.
+	```javascript 
+	 let {hi , bye} = await import('./say.js');
+
+	 hi();
+	 bye();
+
+	 async function load(){
+		let say = await import('./say.js');
+		say.hi();
+		say.bye();
+		say.default();
+	 }
+	```	 	
+	
    
 		 
 ---
@@ -47,6 +64,6 @@ const 컴포넌트=React.lazy(() => import('./컴포넌트 경로'));
 - `React.suspense`
 	- 랜더링이 준비되지 않은 컴포넌트가 존재할 시, 준비 될 때까지, 로딩 화면 등, 다른 컴포넌트들을 먼저 랜더링 시켜준다. 
 	- 데이터 로딩과 UI 랜더링이 완전히 분리되어 코드 가독성과 유지 보수성의 향상을 도모할 수 있다.
-	    - 사용법
-			1. 준비되지 않은 컴포넌트에 `<Suspense>` 컴포넌트로 감싼다
-			2.  Suspense컴포넌트에 `fallback` 인자에 다른 컴포넌트를 넣어줌으로써, 감싼 컴포넌트의 랜더링이 끝날 때까지, `fallback`인자의 컴포넌트를 먼저 보여준다. 
+	- 사용법
+		1. 준비되지 않은 컴포넌트에 `<Suspense>` 컴포넌트로 감싼다
+		2.  Suspense컴포넌트에 `fallback` 인자에 다른 컴포넌트를 넣어줌으로써, 감싼 컴포넌트의 랜더링이 끝날 때까지, `fallback`인자의 컴포넌트를 먼저 보여준다. 
