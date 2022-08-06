@@ -196,36 +196,88 @@
 
 // ======= section 2 daily coding 11 =============================
 
-function removeExtremes(arr) {
-    // 배열을 입력받아, 반볻문을 돌려 키를 문자열의 길이, 값을 배열의 요소로 받는 객체로 만든다.
-    let newObj = {}
+// function removeExtremes(arr) {
+//     // 배열을 입력받아, 반볻문을 돌려 키를 문자열의 길이, 값을 배열의 요소로 받는 객체로 만든다.
+//     let newObj = {}
   
-    for(let el of arr){
-      newObj[el.length] = el
-    }
+//     for(let el of arr){
+//       newObj[el.length] = el
+//     }
 
-    //객체의 첫번째(길이 제일 짤은거)랑 마지막(길이 제일 긴거)을 제외한 거만 원본 배열에서 필터로 걸러주자 
-    let short= Object.values(newObj)[0] //객체도 배열처럼 인덱스로 접근 가능. 
-    let long = Object.values(newObj)[Object.keys(newObj).length-1] //객체도 배열처럼 length 쓸 수 있음.
-    // console.log('shortvalue: ',short)
-    // console.log('longvalue :', long)
+//     //객체의 첫번째(길이 제일 짤은거)랑 마지막(길이 제일 긴거)을 제외한 거만 원본 배열에서 필터로 걸러주자 
+//     let short= Object.values(newObj)[0] //객체도 배열처럼 인덱스로 접근 가능. 
+//     let long = Object.values(newObj)[Object.keys(newObj).length-1] //객체도 배열처럼 length 쓸 수 있음.
+//     // console.log('shortvalue: ',short)
+//     // console.log('longvalue :', long)
 
-    const newArr = arr.filter((el) => 
-      el !== short && el !== long
-    )
-    return newArr
-  }
+//     const newArr = arr.filter((el) => 
+//       el !== short && el !== long
+//     )
+//     return newArr
+//   }
   
-  let output = removeExtremes(['a', 'b', 'c', 'def']);
-  console.log(output); // --> ['a', 'b']
+//   let output = removeExtremes(['a', 'b', 'c', 'def']);
+//   console.log(output); // --> ['a', 'b']
   
-  output = removeExtremes(['where', 'is', 'the', 'longest', 'word']);
-  console.log(output); // --> ['where', 'the', 'word',]
+//   output = removeExtremes(['where', 'is', 'the', 'longest', 'word']);
+//   console.log(output); // --> ['where', 'the', 'word',]
+
+
+// function readVertically(arr) {
+//     // 배열의 요소에 차례대로 접근한다.
+//     // 배열의 첫번째 요소에 접근하여 첫번째 인덱스를 반환하고, arr[0][0]
+//     // 배열의 두번째 요소에 접근하여 첫번째 안덱스를 반환한다. arr[i][0]
+//     // 만약
+//     let newStr = ""  
+//     let strnum = 0
+//     for(el of arr){
+//         if(el.length > strnum){
+//             strnum = el.length
+//         }
+//     }
+   
+//     for(let i = 0 ; i < strnum ; i++){
+//         newStr = newStr + arr[0][i] + arr[1][i]
+//     }
+//     console.log(newStr)
+//   }
+
+//   let input = [
+//     //
+//     'hello',
+//     'wolrd',
+//   ];
+//   let output = readVertically(input);
+//   console.log(output); // --> 'hweolllrod'
+  
+//   input = [
+//     //
+//     'hi',
+//     'wolrd',
+//   ];
+//   output = readVertically(input);
+//   console.log(output); // --> 'hwiolrd'
 
 
 
 
 
-
-
-
+// function readVertically(arr) {
+//     let maxLength = 0;
+//      for(let i = 0; i < arr.length; i++){
+//        if(maxLength < arr[i].length){
+//          maxLength = arr[i].length;
+//        }
+//      }
+//   // ['one', 'five', 'hi']
+//      let result = '';
+//      for(let i = 0; i < maxLength; i++){
+//        for(let j = 0; j < arr.length; j++){
+//          if(arr[j][i] === undefined){
+//            continue;
+//          }
+//          result += arr[j][i];
+//        }
+//      }
+//      return result;
+//   }
