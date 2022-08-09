@@ -281,3 +281,65 @@
 //      }
 //      return result;
 //   }
+
+// function computeSquareRoot(num) {
+//     // 1부터 num보다 커질 때 까지 제곱한다.
+//       // 제곱한 값이 num과 같으면 리턴.
+//     // 제곱한 값이 num보다 작으면 소수 첫번째자리에서 num보다 커질 때까지 제곱한다. 
+//     // 소수 둘째까지 반복.
+
+//    let origin = 2
+//    while(origin*origin < num){
+//      origin = origin + 1
+//      if(origin === num ){
+//        return Number(origin);
+//      } 
+//    }
+//    origin = origin - 1 
+
+//    while(origin*origin < num){
+//     origin = origin + 0.1
+//     if(origin === num ){
+//         return origin;
+//       } 
+//    }
+//    origin = origin - 0.1
+
+//    while(origin*origin < num){
+//     origin = origin + 0.01
+//     if(origin === num ){
+//         return origin;
+//       } 
+//    }
+//    origin = origin - 0.01
+//    console.log(origin)
+//    return Number(origin).toFixed(2)
+// } 
+
+// console.log(computeSquareRoot(4));
+
+
+
+function numberSearch(str) {
+    //1. 돌면서 숫자의 갯수 구함 
+     let count = 0;
+     for(el of str){
+       if( ['1','2','3','4','5','6','7','8','9'].includes(el) ){
+         count++
+        //  console.log(el)
+       }
+     }
+    //2. 문자열의 길이로 나눔 
+     return str.length / count 
+   }
+
+let output = numberSearch('Hello6 ');
+console.log(output); // --> 1
+
+output = numberSearch('Hello6 9World 2,');
+console.log(output); // --> 2
+
+output = numberSearch('Hello6 9World 2, Nic8e D7ay!');
+console.log(output); // --> 2
+
+console.log ( typeof Number('6'))
