@@ -320,26 +320,256 @@
 
 
 
-function numberSearch(str) {
-    //1. 돌면서 숫자의 갯수 구함 
-     let count = 0;
-     for(el of str){
-       if( ['1','2','3','4','5','6','7','8','9'].includes(el) ){
-         count++
-        //  console.log(el)
-       }
-     }
-    //2. 문자열의 길이로 나눔 
-     return str.length / count 
-   }
+// function numberSearch(str) {
+//     //1. 돌면서 숫자의 갯수 구함 
+//      let count = 0;
+//      for(el of str){
+//        if( ['1','2','3','4','5','6','7','8','9'].includes(el) ){
+//          count++
+//         //  console.log(el)
+//        }
+//      }
+//     //2. 문자열의 길이로 나눔 
+//      return str.length / count 
+//    }
 
-let output = numberSearch('Hello6 ');
-console.log(output); // --> 1
+// let output = numberSearch('Hello6 ');
+// console.log(output); // --> 1
 
-output = numberSearch('Hello6 9World 2,');
-console.log(output); // --> 2
+// output = numberSearch('Hello6 9World 2,');
+// console.log(output); // --> 2
 
-output = numberSearch('Hello6 9World 2, Nic8e D7ay!');
-console.log(output); // --> 2
+// output = numberSearch('Hello6 9World 2, Nic8e D7ay!');
+// console.log(output); // --> 2
 
-console.log ( typeof Number('6'))
+// console.log ( typeof Number('6'))
+
+////==========================16번=============
+// function modulo(num1, num2) {
+//   let sum = 0;
+//   while(sum < num1){
+//     sum = sum + num2
+//   }
+//   return num1 -(sum - num2)
+// }
+
+// let output = modulo(25, 4);
+// console.log(output); // --> 1
+
+
+
+
+////===========16번==============================
+
+// function isIsogram(str) {
+//   let newStr = str.toLowerCase();
+//   let newArr = [...newStr];
+//   let newObj = {};
+
+//   for(let i = 0 ; i < newArr.length ; i++){
+//     if(newObj[newArr[i]] !== undefined){
+//       return false
+//     } 
+//       newObj[newArr[i]] = newArr[i]
+//   }
+
+//   return true
+// }
+
+// let output = isIsogram('aba');
+// console.log(output); // false
+
+// output = isIsogram('Dermatoglyphics');
+// console.log(output); // true
+
+// output = isIsogram('moOse');
+// console.log(output); // false
+
+
+
+// //// ===================== 17번 pass ====================
+// function numberSearch(str) {
+//   //1. 돌면서 숫자의 갯수 구함 
+//    let count = 0;
+//    let space = [];
+//    //1.1 만약 공백이 아니면 새로운 배열에 넣는다.
+//    for(el of str){
+ 
+//      if( ['1','2','3','4','5','6','7','8','9'].includes(el) ){
+//        count = count + Number(el);
+//      } else if(el !== ' ') {
+//       // 숫자도 공백도 아닌 경우
+//       space = space + el;
+//     }
+//    }
+//   //2. 문자열의 길이로 나눔 
+//    return Math.round(count / space.length)
+//  }
+
+
+//  let output = numberSearch('Hello6 ');
+// console.log(output); // --> 1
+
+// output = numberSearch('Hello6 9World 2,');
+// console.log(output); // --> 2
+
+// output = numberSearch('Hello6 9World 2, Nic8e D7ay!');
+// console.log(output); // --> 2
+
+//// 19번 ////////////////
+
+// function Node(data){
+//   this.prev = null
+//   this.data = data;
+//   this.next = null;
+  
+// }
+// function CircularLinkedList(){
+//   this.head = null;
+//   this.length = 0;
+//   this.tail = null;
+// }
+
+// let firstNode = new Node(12)
+// let secondNode = new Node(13)
+// console.log(firstNode)
+// console.log(secondNode)
+
+// firstNode.next = secondNode;
+// console.log(firstNode)
+// function decryptCaesarCipher(str, secret) {
+//   let alphastr = 'abcdefghijklmnopqrstuvwxyz'
+//   let newStr = ""
+//   //만약에 target이 str[i]일 경우, str[i-secret]을 반환한다.
+//   for(let i = 0 ; i< str.length ; i++){
+//     if(alphastr.indexOf(str[i])){
+//       newStr = newStr + alphastr[(alphastr.indexOf(str[i]) - secret)] 
+//     }
+//   } 
+
+//   return newStr;
+// }
+
+// let output = decryptCaesarCipher('khoor', 3);
+// console.log(output); // --> hello
+
+// // output = decryptCaesarCipher('zruog', 3);
+// // console.log(output); // --> world
+
+// function readVertically(arr) {
+//   let newStr = "";
+//   let arrlength = arr[1].length
+
+//   for(let i = 0 ; i < arrlength ; i++){
+//     for(let j = 0 ; j < arr.length ; j++){
+//         newStr = newStr + arr[j][i]
+//   }
+// }
+// return newStr
+// }
+
+// let input = [
+//   //
+//   'hi',
+//   'wolrd',
+// ];
+// let output = readVertically(input);
+// console.log(output); // --> 'hwiolrd'
+
+
+// function computeSquareRoot(num) {
+//   // 1부터 num보다 커질 때 까지 제곱한다.
+//     // 제곱한 값이 num과 같으면 리턴.
+//   // 제곱한 값이 num보다 작으면 소수 첫번째자리에서 num보다 커질 때까지 제곱한다. 
+//   // 소수 둘째까지 반복.
+
+//  let origin = 2
+//  while(origin*origin < num){
+//   if(origin*origin === num ){
+//      return origin;
+//    } 
+
+//    origin = origin + 1
+
+//  }
+//  origin = origin - 1 
+
+//  while(origin*origin < num){
+//   origin = origin + 0.1
+//   // if(origin === num ){
+//   //     return origin;
+//   //   } 
+//  }
+//  origin = origin - 0.1
+
+//  while(origin*origin < num){
+//   origin = origin + 0.01
+//   // if(origin === num ){
+//   //     return origin;
+//   //   } 
+//  }
+// //  origin = origin - 0.01
+//  console.log(origin)
+// //  return Number(Number(origin).toFixed(2))
+//  return Math.round((origin + Number.EPSILON) * 100) / 100
+// } 
+// let output = computeSquareRoot(9);
+// console.log(output); // --> 3
+
+// output = computeSquareRoot(6);
+// console.log(output); // --> 2.45
+
+
+////////==================19번 ====================
+// function compressString(str) {
+//   //일단 하나 넣고 카운트 올린다.
+//   // 카운트가 2일 때, 다음게 현재랑 같으면 카운트를 올리고 backet에.
+//   //
+ 
+//    let newStr = "";
+//    let backet = "";
+//    let count = 0
+//    for(let i = 0 ; i < str.length ; i++){
+//      if(str[i-1] !== str[i]){
+//        count = 0
+//      }else{
+//        count++
+//      }
+ 
+//      if(str[i+1] !== str[i] && count >= 2){
+//        count++
+//       //  while(count < )
+      
+       
+//        newStr = newStr+ count + str[i]
+//        count = 0
+//      } else {
+//        newStr = newStr + str[i]
+//      }
+ 
+//    }
+//     return newStr
+//  }
+
+ 
+//  let output = compressString('abc');
+// console.log(output); // --> abc
+
+// output = compressString('wwwggoppopppp');
+// console.log(output); // --> 3wggoppo4p
+
+
+function isIsogram(str) {
+  // 소문자로 바꾸자 
+  // 객체를 만들자 
+  let newStr = str.toLowerCase();
+  let newObj = {};
+  
+  for(let i = 0 ; i < newStr.length ; i++){
+    if(newObj[newStr[i]] !== undefined){
+      return false
+    } 
+      newObj[newStr[i]] = 1
+  }
+  return true
+}
