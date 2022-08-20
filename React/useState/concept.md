@@ -12,7 +12,7 @@
 - setState 함수로 state를 변경할 수 있음.
 - setState 활용해서 state를 변경하면, 화면은 리 랜더링이 된다.
 - 새로 변경될 state값이, 이전 상태와 연관이 있으면, 
-    - 콜백함수로 새로운 state를 리턴해 주는 것이 좋다.
+- 콜백함수로 새로운 state를 리턴해 주는 것이 좋다.
 
 ```javascript
     setState((prevState) => ){
