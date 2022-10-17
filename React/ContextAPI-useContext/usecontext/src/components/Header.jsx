@@ -1,8 +1,12 @@
 import React, { useCallback, useContext } from 'react';
 import { ThemeContext } from '../Context/ThemeContext';
+import { UserContext } from '../context/UserContext';
 
 const Header = () => {
     const {isDark} = useContext(ThemeContext);
+    const user = useContext(UserContext);
+
+
     return(
         <header
             className='header'
@@ -11,7 +15,7 @@ const Header = () => {
                 color: isDark ? 'white' : 'lightcoral',
             }}
         >
-            <h1>Welcome 홍길동</h1>
+            <h1>Welcome {user}</h1>
 
         </header>
     );

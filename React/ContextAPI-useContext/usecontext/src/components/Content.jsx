@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../Context/ThemeContext';
+import { UserContext } from '../context/UserContext';
 
 const Content = () => {
     const {isDark} = useContext(ThemeContext)
+    const user = useContext(UserContext);
     return(
         <div
             className='content'
@@ -11,7 +13,7 @@ const Content = () => {
                 color: isDark ? 'white' : 'lightcoral',
             }}
         >
-            <p>자고싶다</p>
+            <p>{user}자고싶다</p>
 
         </div>
     );

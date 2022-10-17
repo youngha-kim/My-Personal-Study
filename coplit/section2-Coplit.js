@@ -559,17 +559,30 @@
 // console.log(output); // --> 3wggoppo4p
 
 
-function isIsogram(str) {
-  // 소문자로 바꾸자 
-  // 객체를 만들자 
-  let newStr = str.toLowerCase();
-  let newObj = {};
+// function isIsogram(str) {
+//   // 소문자로 바꾸자 
+//   // 객체를 만들자 
+//   let newStr = str.toLowerCase();
+//   let newObj = {};
   
-  for(let i = 0 ; i < newStr.length ; i++){
-    if(newObj[newStr[i]] !== undefined){
-      return false
-    } 
-      newObj[newStr[i]] = 1
-  }
-  return true
-}
+//   for(let i = 0 ; i < newStr.length ; i++){
+//     if(newObj[newStr[i]] !== undefined){
+//       return false
+//     } 
+//       newObj[newStr[i]] = 1
+//   }
+//   return true
+// }
+
+
+var obj = {};
+var obj2  = {};
+let email = 'rladudgk@naver.com'
+obj2[3] = 4;
+obj[1]= 2;
+obj[email]= 4;
+console.log(obj);
+console.log({...obj});
+console.log({...obj, ...obj2})
+
+
