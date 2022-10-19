@@ -26,7 +26,7 @@ function hello (){
 
 // ======
 
-// nerver 
+// never 
 
 // 함수가 절대 return 하면 안될 때 발생.
 // 예로 함수가 예외를 발생시킬 때.
