@@ -53,6 +53,5 @@ const dict1 = new Dict();
 
 dict1.add(kimchi);
 
-let a = new Dict();
 console.log(dict1);
 console.log(dict1.def("kimchi"));
