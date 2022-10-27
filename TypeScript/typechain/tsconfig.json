@@ -1,0 +1,16 @@
+{
+  // src의 모든 파일을 확인하고 자바스크립트 파일로 컴파일한다는 의미 
+  "include": [
+    "src"
+  ],
+  "compilerOptions": {
+    //outDir은 자바스크립트 파일이 생성될 디렉터리를 지정한다.
+    "outDir": "build",
+    "target": "ES6",
+    "esModuleInterop": true,
+
+    "lib" : ["ES6", "DOM"],
+    "strict" : true,
+    "allowJs": true
+  }
+}
