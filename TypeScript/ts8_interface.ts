@@ -60,7 +60,6 @@ console.log(a);
 //========= 
 
 // interface 오직 object의 모양을 특정해주기 위해서만 사용가능하다. 
-
 type Team = "red" | "blue" | "yellow"
 
 // 1 또는 5 또는 10만 생성가능한 타입 
