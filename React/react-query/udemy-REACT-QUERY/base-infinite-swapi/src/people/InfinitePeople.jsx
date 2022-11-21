@@ -24,6 +24,8 @@ export function InfinitePeople() {
   return (
   <>
   {isFetching &&<div className="loading">Loading...</div> }
+
+   {/* 2개의 프로퍼티 사용   */}
     <InfiniteScroll loadMore={fetchNextPage} hasMore={hasNextPage}>
       {data.pages.map((pageData) => {
         return pageData.results.map((person) => {
