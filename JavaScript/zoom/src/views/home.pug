@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+  head
+    base(href="/")
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Noom 
+    link(rel="stylesheet", href="https://unpkg.com/mvp.css")
+  body 
+    header 
+      h1 NOOM 
+    main
+
+      //- playsinline설정하면 휴대폰에서 전체화면을 막아줌 
+      video#myFace(autoplay, playsinline, width="400", height="400") 
+      button#mute Mute 
+      button#camera Turn Camera Off 
+      select#cameras 
+        option(value="device") Face Camera
+    script(src="/socket.io/socket.io.js")
+    script(src="/public/js/app.js" , type="module")

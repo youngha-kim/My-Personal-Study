@@ -1,6 +1,7 @@
 {
   "name": "zoom",
   "version": "1.0.0",
+  "homepage": ".",
   "description": "Zomm Clone using WebRTC and Websockets",
   "license": "MIT",
   "type": "module",
@@ -16,6 +17,9 @@
   },
   "dependencies": {
     "express": "^4.18.2",
-    "pug": "^3.0.2"
+    "io": "^1.0.5",
+    "pug": "^3.0.2",
+    "socket.io": "^4.5.4",
+    "socket.io-client": "^4.5.4"
   }
 }
