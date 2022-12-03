@@ -20,14 +20,20 @@ const httpServer = http.createServer(app);
 const io = new Server(httpServer);
 
 io.on("connection", (socket) => {
-  socket.on("join_room", (roomName, done) => {
+  socket.on("join_room", (roomName) => {
     socket.join(roomName);
-    done();
     socket.to(roomName).emit("welcome");
   });
   socket.on("offer", (offer, roomName) => {
     socket.to(roomName).emit("offer", offer);
   });
+  socket.on("answer", (answer, roomName) => {
+    socket.to(roomName).emit("answer", answer)
+  })
+  // 브라우저에 candidate정보를 다시 보내주어야 함.
+  socket.on("ice", (ice, roomName) => {
+    socket.to(roomName).emit("ice", ice)
+  })
 });
 
 const handleListen = () => console.log("Listening on http://localhost:3000");
