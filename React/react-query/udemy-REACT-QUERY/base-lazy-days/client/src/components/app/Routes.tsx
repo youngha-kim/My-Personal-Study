@@ -1,5 +1,6 @@
+// import { ReactElement } from 'react';
 import { ReactElement } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes , BrowserRouter as Router } from 'react-router-dom';
 
 import { Calendar } from '../appointments/Calendar';
 import { AllStaff } from '../staff/AllStaff';
@@ -8,15 +9,19 @@ import { Signin } from '../user/Signin';
 import { UserProfile } from '../user/UserProfile';
 import { Home } from './Home';
 
-export function Routes(): ReactElement {
+export function Routess(): ReactElement {
   return (
-    <Switch>
-      <Route path="/Staff" component={AllStaff} />
-      <Route path="/Calendar" component={Calendar} />
-      <Route path="/Treatments" component={Treatments} />
-      <Route path="/signin" component={Signin} />
-      <Route path="/user/:id" component={UserProfile} />
-      <Route path="/" component={Home} />
-    </Switch>
+    <>
+      <Router>
+        <Routes>
+          <Route path="/Staff" element={<AllStaff/>} />
+          <Route path="/Calendar" element={<Calendar/>} />
+          <Route path="/Treatments" element={<Treatments/>} />
+          <Route path="/signin" element={<Signin/>} />
+          <Route path="/user/:id" element={<UserProfile/>} />
+          <Route path="/" element={<Home/>} />
+        </Routes>
+      </Router>
+      </>
   );
 }

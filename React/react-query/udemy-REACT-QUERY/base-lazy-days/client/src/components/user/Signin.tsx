@@ -11,7 +11,7 @@ import {
   Stack,
 } from '@chakra-ui/react';
 import { ReactElement, useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { useAuth } from '../../auth/useAuth';
 import { useUser } from './hooks/useUser';
@@ -23,9 +23,10 @@ export function Signin(): ReactElement {
   const [dirty, setDirty] = useState({ email: false, password: false });
   const auth = useAuth();
   const { user } = useUser();
+  const navigate = useNavigate()
 
   if (user) {
-    return <Redirect to={`/user/${user.id}`} />;
+     navigate(`/user/${user.id}`)
   }
 
   return (

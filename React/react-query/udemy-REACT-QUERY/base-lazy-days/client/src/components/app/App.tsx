@@ -6,7 +6,7 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import { theme } from '../../theme';
 import { Loading } from './Loading';
 import { Navbar } from './Navbar';
-import { Routes } from './Routes';
+import { Routess } from "../app/Routes"
 
 export function App(): ReactElement {
   return (
@@ -14,7 +14,7 @@ export function App(): ReactElement {
       <QueryClientProvider client={queryClient}>
         <Navbar />
         <Loading />
-        <Routes />
+        <Routess />
         <ReactQueryDevtools />
       </QueryClientProvider>
     </ChakraProvider>
