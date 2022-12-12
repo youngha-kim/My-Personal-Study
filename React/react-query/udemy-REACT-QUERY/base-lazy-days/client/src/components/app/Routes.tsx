@@ -1,7 +1,6 @@
 // import { ReactElement } from 'react';
 import { ReactElement } from 'react';
-import { Route, Routes , BrowserRouter as Router } from 'react-router-dom';
-
+import { Route, Routes  } from 'react-router-dom';
 import { Calendar } from '../appointments/Calendar';
 import { AllStaff } from '../staff/AllStaff';
 import { Treatments } from '../treatments/Treatments';
@@ -12,7 +11,6 @@ import { Home } from './Home';
 export function Routess(): ReactElement {
   return (
     <>
-      <Router>
         <Routes>
           <Route path="/Staff" element={<AllStaff/>} />
           <Route path="/Calendar" element={<Calendar/>} />
@@ -21,7 +19,6 @@ export function Routess(): ReactElement {
           <Route path="/user/:id" element={<UserProfile/>} />
           <Route path="/" element={<Home/>} />
         </Routes>
-      </Router>
       </>
   );
 }
