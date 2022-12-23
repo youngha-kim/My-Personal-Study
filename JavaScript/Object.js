@@ -31,6 +31,21 @@ console.log(bag['applecomputers']) // 5
 
 // key in object 
 let user = {name : "Young-ha", age : 28};
-let name = "KimJs"
-console.log(name in user) // true 
+let name = "KimJs";
+console.log(name in user) // true
+
+
+// hasOwnProperty
+function Car(name){
+  this.name = name;
+  this.isOption = false;
+}
+let myCar = new Car('쏘렌토')
+
+console.log(myCar) // Car { name: '쏘렌토', isOption: false }
+Car.prototype.year = 3  // 원형객체에 프로토타입 추가 
+
+console.log('year' in myCar) // true  <- 이 경우, 원형객체의 프로퍼티가 검색된다.
+console.log(myCar.hasOwnProperty('year')) // false 즉 해당 객체의 직접작인 속상만을 검사할 수 있다.
+
 
