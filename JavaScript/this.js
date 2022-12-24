@@ -19,13 +19,13 @@ const human = {
     // 객체이므로 this는 human을 가리킴
     console.log(this.name, "said hello");
   },
-  // 객체의 메소드 
+  // 객체의 메소드
   straightForward: function () {
-    // 객체의 메소드 안에서 내부함수 선언 
+    // 객체의 메소드 안에서 내부함수 선언
     function getStep() {
-      return this.name + " move"  
+      return this.name + " move";
     }
-    console.log(getStep(), 'straightForward to', this.name, '`s home')
+    console.log(getStep(), "straightForward to", this.name, "`s home");
   },
 };
 
@@ -52,25 +52,47 @@ youngHa_jump(); // undefined jump !
 const youngHa_jump2 = human.jump();
 youngHa_jump2; // young-ha jump!
 
-human.straightForward()
+human.straightForward();
 
 //3.생성자 함수 호출
-function Human(){
-  this.name = 'young-ha'
+const Asia = {
+  country: "korea",
+};
+
+function Human() {
+  this.name = "young-ha";
 }
 
-const me = new Human()
+const me = new Human();
 
-console.log(me.name)
+console.log(me.name);
 
 function Person(name) {
   // new없이 호출하는 경우, 전역객체에 name 프로퍼티를 추가
   this.name = name;
-};
+}
 
 // 일반 함수로서 호출되었기 때문에 객체를 암묵적으로 생성하여 반환하지 않는다.
 // 일반 함수의 this는 전역객체를 가리킨다.
-var man = Person('Lee');
+var man = Person("Lee");
 
 console.log(man); // undefined
-console.log(Window.name); // Lee
+console.log(Object.prototype.name); // Lee
+
+// 화살표 함수
+const obj = {
+  a: this,
+  b: function () {
+    console.log(this);
+  },
+  c: () => {
+    console.log(this);
+  },
+};
+
+console.log(obj.a); //window 
+obj.b(); // { a: {}, b: [Function: b], c: [Function: c] }
+obj.c(); // window
+
+
+// 
