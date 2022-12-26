@@ -90,9 +90,9 @@ const obj = {
   },
 };
 
-console.log(obj.a); //window 
+console.log(obj.a); //window
 obj.b(); // { a: {}, b: [Function: b], c: [Function: c] }
 obj.c(); // window
 
+//
 
-// 
