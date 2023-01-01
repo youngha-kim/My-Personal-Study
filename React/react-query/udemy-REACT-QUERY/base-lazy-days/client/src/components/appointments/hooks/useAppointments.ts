@@ -21,6 +21,12 @@ import {
   MonthYear,
 } from './monthYear';
 
+// common options for both useQuery and prefetchQuery
+const commonOptions = {
+  staleTime: 0,
+  cacheTime: 300000,
+}
+
 // for useQuery call
 async function getAppointments(
   year: string,
@@ -84,6 +90,9 @@ export function useAppointments(): UseAppointments {
 
   /** ****************** END 2: filter appointments  ******************** */
   /** ****************** START 3: useQuery  ***************************** */
+
+
+
   const queryClient = useQueryClient();
   useEffect(() => {
     const nextMonthYear = getNewMonthYear(monthYear, 1);
@@ -91,6 +100,7 @@ export function useAppointments(): UseAppointments {
     queryClient.prefetchQuery(
       [queryKeys.appointments, nextMonthYear.year, nextMonthYear.month],
       () => getAppointments(nextMonthYear.year, nextMonthYear.month),
+      commonOptions
     );
   }, [queryClient, monthYear]);
 
@@ -110,6 +120,12 @@ export function useAppointments(): UseAppointments {
     () => getAppointments(monthYear.year, monthYear.month),
     {
       select: showAll ? undefined : selectFn,
+      // 어떤 자극이 와도 refetch 되게끔 만들기 
+      ...commonOptions,
+      refetchOnMount: true,
+      refetchOnReconnect: true,
+      refetchOnWindowFocus : true,
+      refetchInterval : 60000, // not recommended for production
     },
   );
 
