@@ -1,3 +1,27 @@
+
+var myFirstName = "Kim"
+var makeClosure = function(){
+  var name = "young-ha";
+  return function(){
+    console.log(name);
+    console.log(myFirstName)
+  }
+}
+
+var closure = makeClosure() // function () { console.log(name); }
+console.log(closure()); // "young-ha"
+
+
+// z
+
+for(let i = 0 ; i < 5; i++){
+  setTimeout(() => {
+    console.log(i)
+  }, i*1000)
+  console.log(i)
+}
+
+
 let globalFunc ; 
 {
   let thisBlockVar = 'this scope';
