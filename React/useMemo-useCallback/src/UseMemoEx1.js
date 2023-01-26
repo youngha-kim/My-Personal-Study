@@ -29,7 +29,10 @@ const MemoEX1 = () => {
   const [val1, setVal1] = useState(0);
   const [val2, setVal2] = useState(0);
 
-
+  const add = (num1, num2) => {
+    console.log("숫자가 들어옵니다.");
+    return Number(num1) + Number(num2);
+  };
 
   const answer = useMemo(()=>{
     return add(val1, val2);
@@ -39,16 +42,9 @@ const MemoEX1 = () => {
     return (
       <StyledApp>
         <div>
-        <input
-        className="name-input"
-        placeholder="이름을 입력해주세요"
-        value={name}
-        type="text"
-        onChange={(e) => setName(e.target.value)}
-      />
       <input
         className="value-input"
-        placeholder="숫자를 입력해주세요"
+        placeholder="숫자를 입력해주세요2"
         value={val1}
         type="number"
         onChange={(e) => setVal1(Number(e.target.value))}
