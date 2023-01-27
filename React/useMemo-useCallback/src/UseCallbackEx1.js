@@ -5,11 +5,11 @@ import React from 'react';
 const CallbackEX1 = () => {
   const [number, setNumber] = useState(0);
   const [toggle, setToggle] = useState(true);
-//원본함수 
-//   const someFunction = () => {
-//     console.log(`someFunc: number: ${number}`);
-//     return ; 
-//   };
+// 원본함수 
+  // const someFunction = () => {
+  //   console.log(`someFunc: number: ${number}`);
+  //   return ; 
+  // };
 
 const someFunction = useCallback(() => {
     console.log(`someFunc: number: ${number}`);

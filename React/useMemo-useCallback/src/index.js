@@ -7,6 +7,8 @@ import MemoEX3 from "./UseMemoEx3"
 import CallbackEX1 from "./UseCallbackEx1";
 import CallbackEX2 from "./UseCallbackEx2";
 import MemoEx4 from "./UseMemoEx4.js";
+import MemoEx5 from "./UseMemoEx5.js"
+import { useState } from "react";
 export const Exstyle = styled.div`
 .div {
     font-family: sans-serif;
@@ -18,7 +20,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Exstyle>
         <div>
-            <MemoEx4/>
+            <CallbackEX2 />
         </div>
     </Exstyle>
 );
