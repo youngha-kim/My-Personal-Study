@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input id="ha" value = "hello world" onclick="alert('안녕')"/>
+  <input type="button" value="클릭미." id="elem">
+  <button id="button">팀버튼</button>
+  <script>
+    function sayThanks(){
+      alert("감사합니다")
+    }
+
+    button.onclick = sayThanks
+    ha.addEventListener("click", () => alert("안녕하세요"))
+
+    elem.onclick = function(event){
+      console.log(event.type + "이벤트가" + event.currentTarget + "에서 발생함..")
+      console.log("이벤트의 발생 좌표는", event.clientX + " : " + event.clientY, "이다.")
+      console.log(event)
+    }
+
+  </script>
+</body>
+</html> 
+
+
