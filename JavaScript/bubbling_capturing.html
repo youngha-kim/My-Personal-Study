@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Useful event target example</title>
+    <style>
+      .tile {
+        height: 100px;
+        width: 25%;
+        float: left;
+      }
+      div {
+        border: black solid 1px;
+      }
+    </style>
+  </head>
+  <body onclick="alert(`버블링은 여기까지 도달하지 못합니다.`)">
+    <button onclick="event.stopPropagation()">클릭해 주세요.</button>
+  </body>
+  
+</html>
