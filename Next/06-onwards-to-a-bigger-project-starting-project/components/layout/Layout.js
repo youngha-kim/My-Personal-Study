@@ -6,7 +6,9 @@ function Layout(props) {
     <div>
       <MainNavigation />
       <main className={classes.main}>{props.children}</main>
+      {/* {console.log(classes)} */}
     </div>
+  
   );
 }
 
