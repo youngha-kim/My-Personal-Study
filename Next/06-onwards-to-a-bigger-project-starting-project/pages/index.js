@@ -20,15 +20,16 @@ const MEET_UP_LIST = [
   },
 ];
 
-function HomePage() {
-
-  const [loadedMeetups, setLoadedMeetups] = useState([]);
-
-  useEffect(() => {
-    setLoadedMeetups(MEET_UP_LIST);
-  }, []);
-
-  return <MeetupList meetups={MEET_UP_LIST} />;
+function HomePage(props) {
+  return <MeetupList meetups={props.meetups} />;
+}
+export function getStaticProps() {
+  return {
+    props: {
+      meetups: MEET_UP_LIST,
+    },
+    revalidate: 10
+  };
 }
 
 export default HomePage;
