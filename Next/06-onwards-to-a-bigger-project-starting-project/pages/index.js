@@ -1,5 +1,4 @@
 import MeetupList from "../components/meetups/MeetupList";
-import { useEffect, useState } from "react";
 
 const MEET_UP_LIST = [
   {
@@ -23,12 +22,25 @@ const MEET_UP_LIST = [
 function HomePage(props) {
   return <MeetupList meetups={props.meetups} />;
 }
-export function getStaticProps() {
+// export function getStaticProps() {
+//   return {
+//     props: {
+//       meetups: MEET_UP_LIST,
+//     },
+//     revalidate: 10
+//   };
+// }
+
+export async function getServerSideProps(context) {
+  // fetch data from an API
+  const req = context.req;
+  const res = context.res;
+  // console.log(res)
+
   return {
     props: {
       meetups: MEET_UP_LIST,
     },
-    revalidate: 10
   };
 }
 
