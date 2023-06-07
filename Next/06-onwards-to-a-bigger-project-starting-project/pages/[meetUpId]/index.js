@@ -1,14 +1,21 @@
 import MeetupDetail from "../../components/meetups/MeetUpDetail";
 import { MongoClient, ObjectId } from "mongodb";
+import Head from "next/head";
 function MeetupDetails(props) {
-  console.log("props", props);
   return (
     <>
+      <Head>
+        <title>{props.meetupData.title}</title>
+        <meta
+          name="description"
+          content={props?.meetupData.description}
+        />
+      </Head>
       <MeetupDetail
-      image={props?.meetupData?.image}
-      title={props?.meetupData?.title}
-      address={props?.meetupData?.address}
-      description={props?.meetupData?.description}
+        image={props?.meetupData.image}
+        title={props?.meetupData.title}
+        address={props?.meetupData.address}
+        description={props?.meetupData.description}
       />
     </>
   );
@@ -40,12 +47,12 @@ export async function getStaticProps(context) {
   const db = client.db();
   const meetupsColllection = db.collection("meetups");
   // const meetupstring = new ObjectId(meetupId)
-  
+
   const selectedMeetups = await meetupsColllection.findOne({
-    _id : new ObjectId(meetupId),
+    _id: new ObjectId(meetupId),
   });
 
-  const parseSeletedMeetups = JSON.parse(JSON.stringify(selectedMeetups))
+  const parseSeletedMeetups = JSON.parse(JSON.stringify(selectedMeetups));
 
   client.close();
 

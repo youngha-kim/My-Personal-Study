@@ -7,6 +7,7 @@ import { Card } from '../common/Card';
 interface StaffProps {
   staffData: StaffType;
 }
+
 export function Staff({ staffData }: StaffProps): ReactElement {
   const cardContents = (
     <Text align="center">{staffData.treatmentNames.join(', ')}</Text>
