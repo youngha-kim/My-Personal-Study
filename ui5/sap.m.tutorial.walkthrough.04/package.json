@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "author": "SAP SE",
   "description": "Code: Walkthrough - Step 4 - XML Views",
+  "main": "index.js",
   "scripts": {
     "start": "ui5 serve",
     "build": "ui5 build"
